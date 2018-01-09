@@ -1,0 +1,7 @@
+footer
+{
+@include respond-to-max(small){  min-height: 400px;}
+@include respond-to-min(medium){  min-height: 50%;}
+  color: $bg-cyan;
+  background: $bg-footer;
+}

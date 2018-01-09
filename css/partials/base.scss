@@ -1,0 +1,174 @@
+@import "../modules/colors";
+@import"../modules/mixins";
+@import "typography";
+body
+{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0;
+
+  @include respond-to-max(small){@include default-pm;font-size: $font-size-small; font-family: $font-family-stack; overflow-x: hidden;}
+  @include respond-to-min(medium){@include default-pm;font-size: $font-size-medium; font-family: $font-family-stack;}
+
+
+
+}
+#banner
+{
+  padding-top: 0%;
+  @include respond-to-max(small){ padding:0;margin: 0 auto; background: url("../img/photo-small.jpg") no-repeat; min-height: 30%;background-size: cover;
+  text-align: center;}
+  @include respond-to-min(medium){ padding:0;margin: 0 auto; background: url("../img/photo-big.jpg") no-repeat;min-height: 60%;background-size: cover;
+  text-align: center;width:100%}
+  h1{
+
+    background: rgba($transparent-gray,0.7);
+    color: $white;
+
+
+    @include respond-to-max(small){font-size:$font-size-mobile-medium; margin-top: 22%; padding: 10px;}
+    @include respond-to-min(medium){font-size:$font-size-tablet-large; margin-top: 20%;padding: 10px}
+    @include respond-to-min(large){font-size:$font-size-large;}
+
+  }
+
+}
+.banner-info{
+    @include respond-to-max(small){width:75%; margin: 0 auto;}
+    @include respond-to-min(small){width:90%; margin: 0 auto;}
+}
+.content
+{
+
+
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  display: flex;
+
+
+}
+
+.first-content
+{
+
+
+@include respond-to-min(medium){width:100%; display: inline;}
+
+.container
+{
+
+  padding: 20px 0 40px 0;
+  background-color:  $bg-cyan;
+  @include respond-to-min(medium){ padding: 40px 0 80px 0;}
+
+
+
+  .content-info
+  {
+
+
+    width: 100%;
+
+    line-height: $line-height-defualt;
+
+      @include respond-to-max(small){width:80%; margin: 0 auto; text-align: left; }
+        @include respond-to-min(medium){width:80%; margin: 0 auto;}
+    h1{
+      color:$bg-nav;
+    @include respond-to-min(large){ font-size: $font-size-bigger;}
+    @include respond-to-max(small){font-size:  $font-size-mobile-larger; }
+      @include respond-to-min(medium){text-align: center; padding: 30px 0 40px 0; font-size: $font-size-tablet-medium;}
+  }
+  h3
+  {
+    font-weight: $regular;
+    @include respond-to-min(large){ font-size: $font-size-regular;}
+    @include respond-to-max(small){font-size:  $font-size-mobile-large; }
+      @include respond-to-min(medium){font-size: $font-size-tablet-small;}
+  }
+  p{
+      @include respond-to-max(small){font-size:  $font-size-mobile-regular; }
+      @include respond-to-min(medium){font-size: $font-size-mobile-xsmall;}
+  }
+  }
+
+
+
+}
+}
+  #second-content
+{
+
+@extend .content;
+@include respond-to-max(small){display: inline-block;}
+
+
+  .container
+  {
+    h1{
+      color: $white;
+      text-align: center;
+    @include respond-to-max(small){  padding-right: 10px;
+      padding-left: 10px;
+      padding-bottom: 40px; padding-top: 20px}
+    @include respond-to-min(medium){ font-size: $font-size-tablet-medium; padding: 25px 0 25px 0}
+    }
+
+
+      @include respond-to-max(small){padding-bottom:  2em;}
+      background-color:  $bg-nav;
+
+
+      .box-container{
+      @include respond-to-min(medium){display: flex; flex-direction: row;}
+      @include respond-to-max(small){padding-top: 20px; }
+      .box{
+        padding-top: 1em;
+        padding-bottom: 1em;
+
+        picture{
+          @include respond-to-max(small){display: flex; justify-content: center; }
+          @include respond-to-min(medium){display: flex; justify-content: center; }
+          -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          transition: all 1s ease;
+          &:hover {
+            opacity: 0.4;
+            -webkit-transform:scale(0.9);
+            -moz-transform:scale(0.9);
+            -ms-transform:scale(0.9);
+            -o-transform:scale(0.9);
+            transform:scale(0.9);
+            background-color: $bg-dark-gray;
+
+          }
+
+        }
+
+        h3
+        {
+          color:white;
+          text-align: center;
+            @include respond-to-max(small){ font-size: $font-size-mobile-medium;padding-top: 20px; }
+            @include respond-to-min(medium){ font-size: $font-size-tablet-small;padding-top: 20px; }
+        }
+        p{
+          @include respond-to-max(small){font-size: $font-size-mobile-regular;}
+          color: $white;
+          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 20px;
+          padding-left: 20px;
+          padding-right: 20px;
+
+        }
+
+      }
+  }
+}
+
+}
